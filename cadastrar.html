@@ -18,11 +18,59 @@
     </nav>
 
     <main>
-       <h2> cadastrar</h2>
-       
+       <h2>Cadastro de Estoque</h2>
 
+       <form action="cadastrar.html" method="post">
+            <section>
+                <!-- Produto -->
+                <h3>Dados do Produto</h3>
+                <p>
+                    <label>Código SKU:</label>
+                    <input type="text" name="sku_produto" required>
+                </p>
 
+                <p>
+                    <label>Nome do produto:</label>
+                    <input type="text" name="nome_produto" required>
+                </p>
+
+                <p>
+                    <label>Quantidade:</label>
+                    <input type="number" name="quantidade" required>
+                </p>
+
+                <p>
+                    <label>Preço:</label>
+                    <input type="number" step="0,01" name="preco" required>
+                </p>
+            </section>
+
+            <hr>
+
+            <!--Dados de fornecedor em outra seção-->
+            <section>
+                <h3>Dados do Fornecedor</h3>
+
+                <p>
+                    <label>Fornecedor:</label>
+                    <input type="text" name="nome_fornecedor" required>
+                </p>
+
+                <p>
+                    <label>CNPJ do Fornecedor</label>
+                    <input type="text" name="cnpj_fornecedor" required>
+                </p>
+
+                <p>
+                    <label>Telefone:</label>
+                    <input type="tel" name="telefone_fornecedor">
+                </p>
+            </section>
+
+            <button type="submit">Salvar</button>
+       </form>
     </main>
+
     <footer>
         <h2>&copy;2026 Sistema de cadastro</h2>
         
