@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="frutas">Escolha uma fruta:</label>
+<select id="frutas" name="frutas">
+  <option value="maca">Maçã</option>
+  <option value="banana">Banana</option>
+  <option value="laranja">Laranja</option>
+</select>
+
+<p>/////////////////========/////////////////////</p>
+
+<!-- ❌ Asterisco sem explicação — ambíguo para quem não conhece a convenção -->
+<label for="email">E-mail *</label>
+<input id="email" type="email" />
+
+<!-- ✅ Marcação semântica + explicação visual + texto para leitores de tela -->
+<p class="text-xs text-gray-500 mb-4">
+  Campos marcados com
+  <span aria-hidden="true">*</span>
+  <span class="sr-only">asterisco</span>
+  são obrigatórios.
+</p>
+
+<label for="email">
+  E-mail
+  <span aria-hidden="true" class="text-red-600 ml-0.5">*</span>
+  <span class="sr-only">(obrigatório)</span>
+</label>
+<input
+  id="email"
+  type="email"
+  name="email"
+  required
+  aria-required="true"
+  autocomplete="email"
+/>
+
+ <nav>
+        <a href="index.html">Inicio</a>
+        <a href="cadastrar.html">Cadastro</a>
+        <a href="pastilhas.html">Pastilhas</a>
+        <a href="movimentacao.html">Movimentação</a>
+        <a href="configuracao.html">Configuração</a>
+        <a href="sair.html">Sair</a>
+    
+    </nav>
+    
+</body>
+</html>
