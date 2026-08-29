@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurção</title>
 </head>
+
 <body>
-    
-    <header><h1>DDA Metalurgica</h1></header>
+
+    <header>
+        <h1>DDA Metalurgica</h1>
+    </header>
     <nav>
         <a href="index.html">Inicio</a> |
         <a href="cadastrar.html">cadastrar</a>|
@@ -18,17 +22,152 @@
     </nav>
 
     <main>
-       <h2> configuração</h2>
-       
+        <h2> configuração</h2>
 
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Configuração - DDA Metalúrgica</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>DDA Metalúrgica</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a> |
+        <a href="cadastrar.html">Cadastrar</a> |
+        <a href="produtos.html">Produtos</a> |
+        <a href="movimentacao.html">Movimentação</a> |
+        <strong>Configuração</strong> |
+        <button type="button">Sair</button>
+    </nav>
+
+    <main>
+
+        <h2>Configuração do Sistema</h2>
+
+        <!-- DADOS FIXOS -->
+        <section>
+
+            <h2>Dados da Empresa</h2>
+
+            <p>
+                <strong>Nome da empresa:</strong>
+                DDA Metalúrgica
+            </p>
+
+            <p>
+                <strong>CNPJ:</strong>
+                00.000.000/0001-00
+            </p>
+
+            <p>
+                <strong>Telefone:</strong>
+                (00) 00000-0000
+            </p>
+
+            <p>
+                <strong>E-mail:</strong>
+                contato@ddametalurgica.com
+            </p>
+
+        </section>
+
+
+        <!-- LOCALIZAÇÃO -->
+        <section>
+
+            <h2>Localização</h2>
+
+            <label for="localizacao">
+                Escolha a localização:
+            </label>
+
+            <select id="localizacao">
+
+                <option value="">Selecione</option>
+                <option value="brasil">Brasil</option>
+                <option value="pernambuco">Pernambuco</option>
+                <option value="recife">Recife</option>
+
+            </select>
+
+        </section>
+
+        <!-- UNIDADE -->
+        <section>
+
+            <h2>Unidade de Medida</h2>
+
+            <p>Escolha a unidade utilizada no estoque:</p>
+
+            <label>
+                <input type="radio" name="unidade" value="unidade">
+                Unidade
+            </label>
+
+            <label>
+                <input type="radio" name="unidade" value="caixa">
+                Caixa
+            </label>
+
+            <label>
+                <input type="radio" name="unidade" value="pacote">
+                Pacote
+            </label>
+
+        </section>
+
+
+        <!-- PERSONALIZAÇÃO -->
+        <section>
+
+            <h2>Personalização da Interface</h2>
+
+            <p>Escolha o tamanho da interface:</p>
+
+            <label>
+                <input type="radio" name="interface" value="normal">
+                Normal
+            </label>
+
+            <label>
+                <input type="radio" name="interface" value="grande">
+                Grande
+            </label>
+
+            <label>
+                <input type="radio" name="interface" value="pequena">
+                Pequena
+            </label>
+
+        </section>
+
+
+        <!-- BOTÕES -->
+        <section>
+
+            <br>
+
+            <button type="submit">
+                Salvar Configuração
+            </button>
+
+            <button type="reset">
+                Limpar Seleções
+            </button>
+
+        </section>
 
     </main>
-    <footer>
-        <h2>&copy;2026 Sistema de cadastro</h2>
-        
-    </footer>
 
-
-    
 </body>
+
 </html>
