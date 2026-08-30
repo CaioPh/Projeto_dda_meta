@@ -1,56 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Document</title>
+=======
+    <title>DDA Metalúrgica - Movimentação</title>
+    <!-- Vinculando o seu arquivo de estilos já existente -->
+>>>>>>> 6c587ee2d6ff138874d3be55f84e856a6df0fe92
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <label for="frutas">Escolha uma fruta:</label>
-<select id="frutas" name="frutas">
-  <option value="maca">Maçã</option>
-  <option value="banana">Banana</option>
-  <option value="laranja">Laranja</option>
+
+    <header>
+        <h1>DDA Metalúrgica</h1>
+        <!-- Mantendo o mesmo menu de navegação das suas outras páginas -->
+        <nav>
+            <a href="index.html">Início</a> | 
+            <a href="cadastrar.html">Cadastro</a> | 
+            <a href="produtos.html">Produtos</a> | 
+            <a href="movimentacao.html"><strong>Movimentação</strong></a> | 
+            <a href="configuracao.html">Configuração</a> | 
+            <a href="#">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Movimentação de Estoque</h2>
+        <p>Utilize o formulário abaixo para registrar a entrada ou saída de produtos.</p>
+
+        <!-- Formulário de movimentação -->
+        <form action="#" method="POST">
+            
+            <!-- 1. Seleção do Produto baseado no padrão ISO -->
+<label for="produto">Selecione o Produto (ISO):</label>
+<select id="produto" name="produto" required>
+    <option value="">-- Selecione uma pastilha --</option>
+    <option value="CNMG120408">Pastilha Mtl Duro (ISO: CNMG 120408)</option>
+    <option value="TNMG160404">Pastilha Soldável (ISO: TNMG 160404)</option>
+    <option value="CCMT09T304">Pastilha Cerâmica (ISO: CCMT 09T304)</option>
+    <option value="WNGM080408">Pastilha Dim PCD (ISO: WNGM 080408)</option>
+    <option value="RNGN120400">Pastilha CBN (ISO: RNGN 120400)</option>
 </select>
 
-<p>/////////////////========/////////////////////</p>
+            <br><br>
 
-<!-- ❌ Asterisco sem explicação — ambíguo para quem não conhece a convenção -->
-<label for="email">E-mail *</label>
-<input id="email" type="email" />
+            <!-- 2. Tipo de Movimentação -->
+            <label for="tipo">Tipo de Movimentação:</label>
+            <select id="tipo" name="tipo" required>
+                <option value="entrada">Entrada (+)</option>
+                <option value="saida">Saída (-)</option>
+            </select>
 
-<!-- ✅ Marcação semântica + explicação visual + texto para leitores de tela -->
-<p class="text-xs text-gray-500 mb-4">
-  Campos marcados com
-  <span aria-hidden="true">*</span>
-  <span class="sr-only">asterisco</span>
-  são obrigatórios.
-</p>
+            <br><br>
 
-<label for="email">
-  E-mail
-  <span aria-hidden="true" class="text-red-600 ml-0.5">*</span>
-  <span class="sr-only">(obrigatório)</span>
-</label>
-<input
-  id="email"
-  type="email"
-  name="email"
-  required
-  aria-required="true"
-  autocomplete="email"
-/>
+            <!-- 3. Quantidade -->
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" required>
 
- <nav>
-        <a href="index.html">Inicio</a>
-        <a href="cadastrar.html">Cadastro</a>
-        <a href="pastilhas.html">Pastilhas</a>
-        <a href="movimentacao.html">Movimentação</a>
-        <a href="configuracao.html">Configuração</a>
-        <a href="sair.html">Sair</a>
-    
-    </nav>
-    
+            <br><br>
+
+            <!-- 4. Botão de Enviar -->
+            <button type="submit">Registrar Movimentação</button>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy;2026 Sistema de cadastro</p>
+    </footer>
+
 </body>
 </html>
