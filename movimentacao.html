@@ -1,34 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movimentação</title>
 </head>
+
 <body>
-    
     <header><h1>DDA Metalurgica</h1></header>
     <nav>
         <a href="index.html">Inicio</a> |
-        <a href="cadastrar.html">Cadastro</a> |
+        <a href="cadastro.html">Cadastro</a> |
         <a href="produtos.html">Produtos</a> |
-        <strong>Movimentação</strong>|
+        <strong>Movimentação</strong> |
         <a href="configuracao.html">Configuração</a> |
-        <button>sair</button>
+        <button>Sair</button>
     </nav>
 
     <main>
-       <h2>Movimentação</h2>
-       
+        <h2>Movimentação</h2>
+        <p>Formulario para registrar a entrada ou saída de produtos.</p>
 
+        <form action="movimentacao.html" method="post">
+
+            <!-- Campo de Seleção do Produto -->
+            <p>
+                <label for="produto">Selecione o produto (ISO):</label>
+                <select id="produto" name="produto" required>
+                    <option value="">-- Selecione uma pastilha --</option>
+                    <option value="CNMG120408">Pastilha Mtl Duro (ISO: CNMG 120408)</option>
+                    <option value="TNMG160404">Pastilha Soldável (ISO: TNMG 160404)</option>
+                    <option value="CCMT09T304">Pastilha Cerâmica (ISO: CCMT 09T304)</option>
+                    <option value="WNGM080408">Pastilha Dim PCD (ISO: WNGM 080408)</option>
+                    <option value="RNGN120400">Pastilha CBN (ISO: RNGN 120400)</option>
+                </select>
+            </p>
+
+            <!-- Tipo de Movimentação -->
+            <p>
+                <label for="tipo">Tipo de Movimentação:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="entrada">Entrada (+)</option>
+                    <option value="saida">Saída (-)</option>
+                </select>
+            </p>
+
+            <!-- Quantidade -->
+            <p>
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" name="quantidade" min="1" required placeholder="Ex 1">
+            </p>
+
+            <!-- Botão de Registrar -->
+            <p>
+                <button type="submit">Registrar Movimentação</button>
+            </p>
+        </form>
 
     </main>
     <footer>
-        <h2>&copy;2026 Sistema de cadastro</h2>
-        
+        <h2>&copy;2026 Gerenciamento de Estoque</h2>
     </footer>
 
-
-    
 </body>
+
 </html>
