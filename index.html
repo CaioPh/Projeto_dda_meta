@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -12,35 +13,34 @@
     <header>
         <h1>DDA Metalurgica</h1>
     </header>
-    <nav>
-        <strong>Inicio</strong> |
-        <a href="cadastrar.html">Cadastro</a> |
-        <a href="produtos.html">Produtos</a> |
-        <a href="movimentacao.html">Movimentação</a> |
-        <a href="configuracao.html">Configuração</a> |
-        <button>Sair</button>
+    <nav class="menu_top">
+        <ul>
+        <li><strong>Inicio</strong> |</li>
+        <li><a href="cadastrar.html">Cadastro</a> |</li>
+        <li><a href="produtos.html">Produtos</a> |</li>
+        <li><a href="movimentacao.html">Movimentação</a> |</li> 
+        <li><a href="configuracao.html">Configuração</a> |</li>
+        <li><strong><button>Enviar</button></strong></li>
+    </ul>
     </nav>
 
     <main>
-        <h2> Login</h2>
+        <h2>Acessar conta</h2>
 
-        <p>
-            <label for="login">Login:</label>
-            <input type="text" id="login" name="classe" placeholder="Login" required>
+        <form action="index.html" method="post">
+            <label for="user_email">Email:</label>
+            <input type="email" id="user_email" name="classe" placeholder="Seu email" required>
 
-        </p>
-
-        <p>
             <label for="senha_login">Senha:</label>
-            <input type="password" id="senha_login" name="senha_login" placeholder="Senha" required>
-        </p>
+            <input type="password" id="senha_login" name="senha_login" placeholder="Sua senha" required>
 
+        </form>
 
 
 
     </main>
     <footer>
-        <h2>&copy;2026 Gerenciamento de Estoque</h2>
+        <p>&copy;2026 Gerenciamento de Estoque</p>
 
     </footer>
 
