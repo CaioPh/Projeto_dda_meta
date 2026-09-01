@@ -28,10 +28,10 @@ header {
 
 header h1 {
     font-size: 2rem;
-    color: #111;
+    color: black;
 }
 
-/* Navegação Responsiva */
+/* Navegação */
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -76,7 +76,7 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 670px; /* Garante que não estique demais em telas grandes */
+    max-width: 670px;   /* Garante que não estique demais em telas grandes */
     margin-bottom: 30px;
 }
 
@@ -101,7 +101,7 @@ label {
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
