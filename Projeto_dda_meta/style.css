@@ -1,0 +1,126 @@
+
+
+/* Reset básico para consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Centralização vertical e horizontal de todo o conteúdo */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+}
+
+/* Cabeçalho */
+header {
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: black;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+nav a, nav strong {
+    text-decoration: none;
+    color: #555;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    color: #007BFF;
+}
+
+nav button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #bd2130;
+}
+
+/* Caixa de Login (Main) */
+main {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 670px;   /* Garante que não estique demais em telas grandes */
+    margin-bottom: 30px;
+}
+
+main h2 {
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Campos de Formulário */
+main p {
+    margin-bottom: 15px;
+    text-align: left; /* Alinha os labels à esquerda dentro do bloco centralizado */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Rodapé */
+footer {
+    width: 100%;
+    max-width: 400px;
+}
+
+footer h2 {
+    font-size: 0.85rem;
+    color: #777;
+    font-weight: normal;
+}
