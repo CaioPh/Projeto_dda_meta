@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DDA Metalúrgica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>DDA Metalúrgica</h1>
+    </header>
+    
+    <nav>
+        <strong>Inicio</strong> |
+        <a href="cadastrar.html">Cadastro</a> |
+        <a href="produtos.html">Produtos</a> |
+        <a href="movimentacao.html">Movimentação</a> |
+        <a href="configuracao.html">Configuração</a> |
+        <button>Sair</button>
+    </nav>
+
+    
+    <main>
+        <h2>Acessar conta</h2>
+        <form action="index.html" method="post" id="login">
+            <p>
+                <label for="user_email">Email:</label>
+                <input type="text" id="user_email" name="user_email" placeholder="Seu email" required>
+            </p>
+
+            <p>
+                <label for="senha_login">Senha:</label>
+                <input type="password" id="senha_login" name="senha_login" placeholder="Sua senha" required>
+            </p>
+            
+            <p>
+                <button type="submit">Entrar</button>
+            </p>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2026 Gerenciamento de Estoque</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
