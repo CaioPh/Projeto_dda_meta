@@ -14,3 +14,8 @@ Divisão da Equipe:
 * Natan: Desenvolveu a tela de Configurações Gerais e o botão de Sair.
 
 Tecnologias: HTML5 para a estrutura das páginas, CSS3 para o visual e design responsivo, e Git/GitHub para o controle e organização do código do grupo.
+
+INTERAÇÃO COM APIs
+Aluno: Caio Phelipe
+Aluno: Ernani Ancelmo Santos
+
