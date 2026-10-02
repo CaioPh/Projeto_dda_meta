@@ -1,9 +1,29 @@
-// Carrega o estoque existente da memória
-let estoquePastilhas = JSON.parse(localStorage.getItem('DDA_Estoque')) || [];
+const API_URL = "https://6abaf0395b549d818d62ba15.mockapi.io/ddametalurgica/pastilhas";
+
+// Guardar os dados vindos da API em vez do localStorage
+let estoquePastilhas = [];
+
+
+// CARREGAR ESTOQUE (GET Geral)
+
+async function carregarEstoque() {
+    try {
+        const response = await fetch(API_URL);
+        
+        
+        if (!response.ok) throw new Error("Erro ao buscar dados da API");
+        
+        estoquePastilhas = await response.json();
+        atualizarTabela(); // Atualiza a tela com os dados reais
+    } catch (error) {
+        console.error("Erro ao carregar estoque:", error);
+    }
+}
+
+// Atualizar Tabela
 
 function atualizarTabela() {
     const corpoTabela = document.querySelector('#corpo-tabela');
-    
     if (!corpoTabela) return;
 
     corpoTabela.innerHTML = '';
@@ -13,7 +33,8 @@ function atualizarTabela() {
         return;
     }
 
-    estoquePastilhas.forEach(function (pastilha, index) {
+    // Agora usamos o id vindo do mockAPI (pastilha.id) para deletar/editar
+    estoquePastilhas.forEach(function (pastilha) {
         const linha = document.createElement('tr');
 
         linha.innerHTML = `
@@ -26,30 +47,36 @@ function atualizarTabela() {
             <td>${pastilha.minimo}</td>
             <td>${pastilha.localizacao}</td>
             <td>
-                <button onclick="deletarItem(${index})" style="background-color: #d9534f; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">
+                <!-- Passamos pastilha.id em vez do index do array -->
+                <button onclick="deletarItem('${pastilha.id}')" style="background-color: #d9534f; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">
                     Excluir
                 </button>
             </td>
         `;
-
+        
         corpoTabela.appendChild(linha);
     });
 }
 
-// Funçao para deletar o item selecionado
-function deletarItem(index) {
-    
+// DELETAR ITEM (DELETE)
+
+async function deletarItem(id) {
     if (confirm("Tem certeza que deseja apagar este item do estoque?")) {
-        // Remove 1 item a partir da posição (index) clicada
-        estoquePastilhas.splice(index, 1);
-        
-        // Atualiza o banco de dados (localStorage) 
-        localStorage.setItem('DDA_Estoque', JSON.stringify(estoquePastilhas));
-        
-        // Mostrar tabela atualizada na tela
-        atualizarTabela();
+        try {
+            const response = await fetch(`${API_URL}/${id}`, {
+                method: "DELETE"
+            });
+
+            if (!response.ok) throw new Error("Erro ao deletar item na API");
+
+            // Recarrega os dados atualizados direto da API
+            carregarEstoque();
+        } catch (error) {
+            console.error("Erro ao deletar:", error);
+            alert("Não foi possível excluir o item.");
+        }
     }
 }
 
-// Execução rápida 
-atualizarTabela();
+// Inicializa buscando os dados da API 
+carregarEstoque();
