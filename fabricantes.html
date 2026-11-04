@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabricantes - DDA Metalurgica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>DDA Metalurgica</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a> |
+        <a href="cadastrar.html">Cadastro</a> |
+        <strong>Fabricantes</strong> |
+        <a href="produtos.html">Produtos</a> |
+        <a href="movimentacao.html">Movimentação</a> |
+        <a href="configuracao.html">Configuração</a> |
+        <button>Sair</button>
+    </nav>
+
+    <main>
+
+        <h2>Controle de Fabricantes</h2>
+
+        <!-- SEÇÃO 1: FORMULÁRIO DE CADASTRO / EDIÇÃO -->
+        <section id="secao-cadastro">
+            <h3 id="titulo-form">Cadastro de Fabricante</h3>
+            
+            <form id="form-fabricante" novalidate>
+                <!-- Input oculto para controle de ID e validação de edição -->
+                <input type="hidden" id="fabricante-id">
+
+                <p>
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0001-00" required>
+                    <small id="cnpj-erro" style="color: red; display: none;">Este CNPJ já está cadastrado.</small>
+                </p>
+
+                <p>
+                    <label for="razao-social">Razão Social:</label>
+                    <input type="text" id="razao-social" name="razao_social" placeholder="Razão Social Completa" required>
+                </p>
+
+                <p>
+                    <label for="nome-fantasia">Nome Fantasia:</label>
+                    <input type="text" id="nome-fantasia" name="nome_fantasia" placeholder="Nome Comercial / Marca" required>
+                </p>
+
+                <p>
+                    <label for="contato">Contato:</label>
+                    <input type="text" id="contato" name="contato" placeholder="Telefone ou E-mail de contato" required>
+                </p>
+
+                <p>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+                    <button type="button" id="btn-buscar-cep">Buscar Endereço</button>
+                </p>
+
+                <p>
+                    <label for="logradouro">Endereço (Rua/Av):</label>
+                    <input type="text" id="logradouro" name="logradouro" placeholder="Ex: Av. Principal" required>
+                </p>
+
+                <p>
+                    <label for="numero">Número:</label>
+                    <input type="text" id="numero" name="numero" placeholder="Ex: 123" required>
+                </p>
+
+                <p>
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+                </p>
+
+                <p>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+                </p>
+
+                <p>
+                    <label for="estado">Estado (UF):</label>
+                    <input type="text" id="estado" name="estado" placeholder="Ex: SP" maxlength="2" required>
+                </p>
+
+                <!-- Botões de Ação do Formulário -->
+                <div class="acoes-formulario">
+                    <button type="submit" id="btn-salvar">Salvar</button>
+                    <button type="button" id="btn-cancelar" style="display: none;">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- SEÇÃO 2: CONSULTA / LISTAGEM -->
+        <section id="secao-consulta">
+            <h3>Consulta e Listagem</h3>
+
+            <!-- Barra de Filtros e Busca -->
+            <div class="filtros-container" style="margin-bottom: 15px;">
+                <input type="text" id="busca-termo" placeholder="Buscar por CNPJ, Razão Social ou Fantasia...">
+                
+                <label for="filtro-status">Status:</label>
+                <select id="filtro-status">
+                    <option value="ativos">Apenas Ativos</option>
+                    <option value="inativos">Apenas Inativos</option>
+                    <option value="todos">Todos</option>
+                </select>
+            </div>
+
+            <!-- Tabela de Dados (Ordenada Alfabeticamente via JS) -->
+            <table id="tabela-fabricantes" border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                    <tr style="background-color: #f2f2f2;">
+                        <th style="padding: 8px;">CNPJ</th>
+                        <th style="padding: 8px;">Nome Fantasia / Razão Social</th>
+                        <th style="padding: 8px;">Contato</th>
+                        <th style="padding: 8px;">Cidade/UF</th>
+                        <th style="padding: 8px;">Status</th>
+                        <th style="padding: 8px; text-align: center;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela-fabricantes">
+                   
+                </tbody>
+            </table>
+
+            <!-- Controle de Paginação (10 registros por página) -->
+            <div id="paginacao" style="margin-top: 15px; text-align: right;">
+                <button id="pag-anterior" disabled>Anterior</button>
+                <span id="pag-info">Página 1 de 1</span>
+                <button id="pag-proxima" disabled>Próxima</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <h2>&copy;2026 Gerenciamento de Estoque</h2>
+    </footer>
+
+    <script src="fabricantes.js"></script>
+</body>
+
