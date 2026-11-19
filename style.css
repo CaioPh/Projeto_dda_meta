@@ -1,126 +1,257 @@
 
+/* CONFIGURAÇÕES GERAIS */
 
-/* Reset básico para consistência */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Centralização vertical e horizontal de todo o conteúdo */
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    padding: 20px;
-    background-color: #f4f4f9;
+    background-color: #f4f5f7;
     color: #333;
+}
+
+/* CABEÇALHO DO SISTEMA */
+
+header {
+    width: 100%;
+    padding: 22px;
+    background-color: #182B49;
+    color: white;
     text-align: center;
 }
 
-/* Cabeçalho */
-header {
-    margin-bottom: 15px;
-}
-
 header h1 {
-    font-size: 2rem;
-    color: black;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: white;
 }
 
-/* Navegação */
+/* MENU DE NAVEGAÇÃO */
+
 nav {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-    padding: 10px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    gap: 8px;
+
+    width: 100%;
+    padding: 15px;
+
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-bottom: 1px solid #ddd;
 }
 
-nav a, nav strong {
+nav a,
+nav strong {
+    display: inline-block;
+    padding: 10px 14px;
+
     text-decoration: none;
-    color: #555;
-    padding: 5px 10px;
+    color: #344b49;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: 0.2s;
 }
 
 nav a:hover {
-    color: #007BFF;
+    background-color: #e7f5ee;
+    color: #204996;
 }
 
-nav button {
+nav strong {
+    background-color: #e7f5ee;
+    color: #204996;
+}
+
+/* BOTÃO SAIR */
+
+nav button,
+nav a.sair {
     background-color: #dc3545;
     color: white;
     border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
+    text-decoration: none;
 }
 
-nav button:hover {
+nav button:hover,
+nav a.sair:hover {
     background-color: #bd2130;
+    color: white;
 }
 
-/* Caixa de Login (Main) */
+/* CONTEÚDO PRINCIPAL*/
+
 main {
-    background: #ffffff;
+    width: 95%;
+    max-width: 1100px;
+    min-height: 250px;
+
+    margin: 30px auto;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 670px;   /* Garante que não estique demais em telas grandes */
-    margin-bottom: 30px;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
 }
 
 main h2 {
-    margin-bottom: 20px;
-    color: #222;
+    margin-bottom: 25px;
+    color: #182B49;
+    font-size: 23px;
 }
 
-/* Campos de Formulário */
+/* FORMULÁRIOS */
+
 main p {
-    margin-bottom: 15px;
-    text-align: left; /* Alinha os labels à esquerda dentro do bloco centralizado */
+    margin-bottom: 18px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+    font-size: 14px;
     font-weight: bold;
-    font-size: 0.9rem;
 }
 
-input[type="text"],
-input[type="password"] {
+input,
+select,
+textarea {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.2s;
-}
+    padding: 11px;
 
-input:focus {
-    border-color: #007BFF;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    font-size: 14px;
     outline: none;
 }
 
-/* Rodapé */
-footer {
-    width: 100%;
-    max-width: 400px;
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #A8C5E8;
+    box-shadow: 0 0 4px rgba(21,155,101,0.2);
 }
 
-footer h2 {
-    font-size: 0.85rem;
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* RODAPÉ */
+
+footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
     color: #777;
-    font-weight: normal;
+    font-size: 12px;
+}
+
+/* TELA DE LOGIN*/
+
+body.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.login-page header.login-brand {
+    width: auto;
+    padding: 0;
+    margin: 0 0 20px;
+    background: transparent;
+    color: #2A5C99;
+    box-shadow: none;
+    border: none;
+}
+
+.login-page .login-brand h1 {
+    background: transparent;
+    color: #2A5C99;
+    font-size: 34px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+}
+.login-card {
+    width: 100%;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    text-align: left;
+}
+
+.login-card h2 {
+    text-align: center;
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.login-card input {
+    margin-bottom: 17px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 13px;
+    background-color: #A8C5E8;
+    color: #073b20;
+}
+
+.login-button:hover {
+    background-color: #A8C5E8;
+}
+
+.login-description,
+.login-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a,
+    nav strong,
+    nav button {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        width: 100%;
+        padding: 20px;
+    }
+
 }

@@ -4,24 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabricantes - DDA Metalurgica</title>
+    <title>Fabricantes - CEPAD</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>DDA Metalurgica</h1>
+        <h1>CEPAD</h1>
     </header>
+
     <nav>
-        <a href="index.html">Inicio</a> |
-        <a href="cadastrar.html">Cadastro</a> |
-        <strong>Fabricantes</strong> |
-        <a href="produtos.html">Produtos</a> |
-        <a href="movimentacao.html">Movimentação</a> |
-        <a href="configuracao.html">Configuração</a> |
-        <button>Sair</button>
-    </nav>
+    <a href="cadastrar.html">Cadastro</a> |
+    <strong>Fabricantes</strong> |
+    <a href="produtos.html">Produtos</a> |
+    <a href="movimentacao.html">Movimentação</a> |
+    <a href="configuracao.html">Configuração</a> |
+    <a href="index.html" class="sair">Sair</a>
+</nav>
+
 
     <main>
 
@@ -30,7 +31,7 @@
         <!-- SEÇÃO 1: FORMULÁRIO DE CADASTRO / EDIÇÃO -->
         <section id="secao-cadastro">
             <h3 id="titulo-form">Cadastro de Fabricante</h3>
-            
+
             <form id="form-fabricante" novalidate>
                 <!-- Input oculto para controle de ID e validação de edição -->
                 <input type="hidden" id="fabricante-id">
@@ -43,12 +44,14 @@
 
                 <p>
                     <label for="razao-social">Razão Social:</label>
-                    <input type="text" id="razao-social" name="razao_social" placeholder="Razão Social Completa" required>
+                    <input type="text" id="razao-social" name="razao_social" placeholder="Razão Social Completa"
+                        required>
                 </p>
 
                 <p>
                     <label for="nome-fantasia">Nome Fantasia:</label>
-                    <input type="text" id="nome-fantasia" name="nome_fantasia" placeholder="Nome Comercial / Marca" required>
+                    <input type="text" id="nome-fantasia" name="nome_fantasia" placeholder="Nome Comercial / Marca"
+                        required>
                 </p>
 
                 <p>
@@ -104,7 +107,7 @@
             <!-- Barra de Filtros e Busca -->
             <div class="filtros-container" style="margin-bottom: 15px;">
                 <input type="text" id="busca-termo" placeholder="Buscar por CNPJ, Razão Social ou Fantasia...">
-                
+
                 <label for="filtro-status">Status:</label>
                 <select id="filtro-status">
                     <option value="ativos">Apenas Ativos</option>
@@ -126,7 +129,7 @@
                     </tr>
                 </thead>
                 <tbody id="corpo-tabela-fabricantes">
-                   
+
                 </tbody>
             </table>
 
@@ -146,4 +149,3 @@
 
     <script src="fabricantes.js"></script>
 </body>
-
