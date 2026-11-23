@@ -1,71 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movimentação - CEPAD</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movimentação - CEPAD</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>CEPAD</h1>
-    </header>
-    <nav>
+  <header>
+    <h1>CEPAD</h1>
+  </header>
+
+  <nav>
     <a href="cadastrar.html">Cadastro</a> |
     <a href="fabricantes.html">Fabricantes</a> |
     <a href="produtos.html">Produtos</a> |
     <strong>Movimentação</strong> |
     <a href="configuracao.html">Configuração</a> |
     <a href="index.html" class="sair">Sair</a>
-</nav>
+  </nav>
 
-    <main>
-        <h2>Movimentação</h2>
-        <p>Formulario para registrar a entrada ou saída de produtos.</p>
+  <main>
+    <h2>Movimentação</h2>
+    <p>Formulario para registrar a entrada ou saída de produtos.</p>
 
-        <form action="movimentacao.html" method="post">
+    <form id="form-movimentacao">
+      <!-- Campo de Seleção do Produto -->
+      <p>
+        <label for="produto">Selecione o produto (ISO):</label>
+        <select id="produto" name="produto" required>
+          <option value="">-- Selecione uma pastilha --</option>
+          <option value="CNMG120408">Pastilha Mtl Duro (ISO: CNMG 120408)</option>
+          <option value="TNMG160404">Pastilha Soldável (ISO: TNMG 160404)</option>
+          <option value="CCMT09T304">Pastilha Cerâmica (ISO: CCMT 09T304)</option>
+          <option value="WNGM080408">Pastilha Dim PCD (ISO: WNGM 080408)</option>
+          <option value="RNGN120400">Pastilha CBN (ISO: RNGN 120400)</option>
+        </select>
+      </p>
 
-            <!-- Campo de Seleção do Produto -->
-            <p>
-                <label for="produto">Selecione o produto (ISO):</label>
-                <select id="produto" name="produto" required>
-                    <option value="">-- Selecione uma pastilha --</option>
-                    <option value="CNMG120408">Pastilha Mtl Duro (ISO: CNMG 120408)</option>
-                    <option value="TNMG160404">Pastilha Soldável (ISO: TNMG 160404)</option>
-                    <option value="CCMT09T304">Pastilha Cerâmica (ISO: CCMT 09T304)</option>
-                    <option value="WNGM080408">Pastilha Dim PCD (ISO: WNGM 080408)</option>
-                    <option value="RNGN120400">Pastilha CBN (ISO: RNGN 120400)</option>
-                </select>
-            </p>
+      <!-- Tipo de Movimentação -->
+      <p>
+        <label for="tipo">Tipo de Movimentação:</label>
+        <select id="tipo" name="tipo" required>
+          <option value="entrada">Entrada (+)</option>
+          <option value="saida">Saída (-)</option>
+        </select>
+      </p>
 
-            <!-- Tipo de Movimentação -->
-            <p>
-                <label for="tipo">Tipo de Movimentação:</label>
-                <select id="tipo" name="tipo" required>
-                    <option value="entrada">Entrada (+)</option>
-                    <option value="saida">Saída (-)</option>
-                </select>
-            </p>
+      <p>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" min="1" required placeholder="Ex 1">
+      </p>
 
-            <!-- Quantidade -->
-            <p>
-                <label for="quantidade">Quantidade:</label>
-                <input type="number" id="quantidade" name="quantidade" min="1" required placeholder="Ex 1">
-            </p>
+      <p>
+        <button type="submit">Registrar Movimentação</button>
+      </p>
+    </form>
 
-            <!-- Botão de Registrar -->
-            <p>
-                <button type="submit">Registrar Movimentação</button>
-            </p>
-        </form>
+    <!-- Mensagem de aviso e tabela de histórico -->
+    <div id="mensagem" style="margin-top: 15px; font-weight: bold;"></div>
 
-    </main>
-    <footer>
-        <h2>&copy;2026 Gerenciamento de Estoque</h2>
-    </footer>
+    <h3>Histórico de Movimentações</h3>
+    <table border="1" style="width: 100%; text-align: left; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th>Data/Hora</th>
+          <th>Produto</th>
+          <th>Tipo</th>
+          <th>Qtd</th>
+          <th>Saldo Atual</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-historico"></tbody>
+    </table>
+  </main>
 
+  <footer>
+    <h2>&copy;2026 Gerenciamento de Estoque</h2>
+  </footer>
+
+  <script src="movimentacao.js"></script>
 </body>
-
 </html>
