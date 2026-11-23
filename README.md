@@ -1,21 +1,26 @@
 # Projeto_dda_meta
-Estrutura front-end estática em HTML e CSS.
+Objetivo: A DDA Metalúrgica enfrenta falhas e atrasos na reposição de pastilhas industriais devido ao controle manual em planilhas, Desenvolvemos uma aplicação web front-end responsiva para o setor de almoxarifado e produção da empresa. A solução automatiza o registro de entradas e saídas de materiais.
 
-Projeto: Sistema de Estoque DDA Metalúrgica (SA-1)
+# CEPAD — Controle de Estoque de Pastilhas DDA
 
-O que é: Proposta de interface e front-end estático com 5 telas (Login, Cadastro, Produtos, Movimentação e Configurações) desenvolvida para substituir o controle manual de planilhas.
+Sistema web front-end desenvolvido para substituir o controle manual em planilhas na **DDA Metalúrgica**, oferecendo uma interface responsiva para o gerenciamento de pastilhas, movimentações de estoque e integração com APIs.
 
-Processo de Trabalho:
-Iniciamos com pesquisa de mercado e desenhos de esboços no papel (wireframes). Aplicamos regras de UX/UI para criar um visual padronizado
+## Telas do Sistema
 
-Divisão da Equipe:
-* Caio: Criou o repositório no GitHub, desenvolveu as telas de Produtos e Movimentação, ajudou no Cadastro e realizou os ajustes e mesclagem final do código.
-* Ernani: Desenvolveu as telas de Login e Cadastro, além de criar quase todo o código CSS (estilização e layout) do projeto.
-* Natan: Desenvolveu a tela de Configurações Gerais e o botão de Sair.
+* Login e Cadastro: Acesso e registro de operadores.
+* Produtos: Catálogo e gerenciamento de pastilhas.
+* Movimentação: Controle de entradas e saídas de estoque.
+* Configurações: Ajustes gerais e encerramento de sessão (*Sair*).
 
-Tecnologias: HTML5 para a estrutura das páginas, CSS3 para o visual e design responsivo, e Git/GitHub para o controle e organização do código do grupo.
+## Tecnologias e Processo
 
-INTERAÇÃO COM APIs
-Aluno: Caio Phelipe
-Aluno: Ernani Ancelmo Santos
+* UX/UI:** Pesquisa de mercado, prototipação em papel (wireframes) e padronização visual.
+* Front-end: HTML5, CSS3 (design responsivo) e JavaScript (integração com APIs).
+* Versionamento: Git & GitHub.
+
+## Equipe
+
+* **Caio Phelipe:** Repositório GitHub, telas de *Produtos* e *Movimentação*, apoio no *Cadastro* e merge final.
+* **Ernani Ancelmo Santos:** Telas de *Login* e *Cadastro*, e estilização principal em CSS3.
+
 
